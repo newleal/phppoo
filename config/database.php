@@ -1,12 +1,8 @@
 <?php
 
-$host = 'localhost';
-$db = 'php';
-$user = 'root';
-$password = '';
-$charset = 'utf8mb4';
+require_once __DIR__ . '/config.php';
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+$dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
 
 $options = [
 
@@ -16,18 +12,18 @@ $options = [
 ];
 
 try{
-    $pdo = new PDO($dsn, $user, $password, $options);
+    $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
 
     echo '¡CONEXION A LA BASE DE DATOS EXITOSA!!!<br>';
 
     //Insertar registros
-    $stmt = $pdo->prepare("INSERT INTO users (nombre, email) VALUES (:nombre, :email)");
-    $stmt->execute(['nombre' => 'usuario', 'email' => 'usuario@gmail.com']);
+    // $stmt = $pdo->prepare("INSERT INTO users (nombre, email) VALUES (:nombre, :email)");
+    // $stmt->execute(['nombre' => 'usuario', 'email' => 'usuario@gmail.com']);
     
-    echo 'Nuevo usuario agregado con ID: ' . $pdo->lastInsertId() . '<br>';
+    // echo 'Nuevo usuario agregado con ID: ' . $pdo->lastInsertId() . '<br>';
 
-    // Recuperar registros
-    $stmt = $pdo->query("SELECT * FROM users");
+    // // Recuperar registros
+    // $stmt = $pdo->query("SELECT * FROM users");
 
     while($row = $stmt->fetch())
     {
