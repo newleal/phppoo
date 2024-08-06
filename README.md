@@ -12,3 +12,6 @@ config.php
 
 # Archivos de caché
 *.cache
+
+# Uso
+# se registra usuarios en formulario

@@ -25,10 +25,10 @@ try{
     // // Recuperar registros
     // $stmt = $pdo->query("SELECT * FROM users");
 
-    while($row = $stmt->fetch())
-    {
-        echo "ID: " . $row['id'] . ", Nombre: " . $row['nombre'] . ", email: " . $row['email'] . '<br>'; 
-    }
+    // while($row = $stmt->fetch())
+    // {
+    //     echo "ID: " . $row['id'] . ", Nombre: " . $row['nombre'] . ", email: " . $row['email'] . '<br>'; 
+    // }
 
 
 } catch (\PDOException $e){
