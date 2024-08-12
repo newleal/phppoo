@@ -18,5 +18,9 @@ echo "<ul>";
 
 echo "</ul>";
 
+echo '<p><a href="registro.php">Registro</a></p>';
+echo '<p><a href="login.php">Login</a></p>';
+
 
 ?>
+
